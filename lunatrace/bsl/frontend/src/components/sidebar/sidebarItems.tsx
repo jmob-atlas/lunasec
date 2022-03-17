@@ -22,6 +22,18 @@ export function generateSidebarItems(data: GetSidebarInfoQuery | undefined, isAu
     ? []
     : [
         {
+          href: '/organization/:organization_id',
+          icon: Briefcase,
+          title: 'Organizations',
+          // badge: data.organizations.length.toString(),
+          children: data.organizations.map((o) => {
+            return {
+              href: `/organization/${o.id as string}`,
+              title: o.name,
+            };
+          }),
+        },
+        {
           href: '/project/:project_id',
           icon: Folder,
           title: 'Projects',
@@ -39,18 +51,6 @@ export function generateSidebarItems(data: GetSidebarInfoQuery | undefined, isAu
               icon: Plus,
             },
           ],
-        },
-        {
-          href: '/organization/:organization_id',
-          icon: Briefcase,
-          title: 'Organizations',
-          // badge: data.organizations.length.toString(),
-          children: data.organizations.map((o) => {
-            return {
-              href: `/organization/${o.id as string}`,
-              title: o.name,
-            };
-          }),
         },
       ];
 

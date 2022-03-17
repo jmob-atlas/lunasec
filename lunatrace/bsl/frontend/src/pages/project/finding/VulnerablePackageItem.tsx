@@ -94,7 +94,7 @@ export const VulnerablePackageItem: React.FunctionComponent<FindingListItemProps
             <Row>
               <h5>
                 {' '}
-                <span className="darker">Recommended version: </span>
+                <span className="darker">Recommended minimum version: </span>
                 {recommendVersion}
               </h5>
             </Row>

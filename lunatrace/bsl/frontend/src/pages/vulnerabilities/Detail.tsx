@@ -41,7 +41,7 @@ export const VulnerabilityDetail: React.FunctionComponent = () => {
               <h1>{vuln.name}</h1>
 
               <h5>
-                <a href={vuln.data_source || ''}>
+                <a target="_blank" rel="noopener noreferrer" href={vuln.data_source || ''}>
                   {vuln.namespace} <ExternalLink />
                 </a>
               </h5>
